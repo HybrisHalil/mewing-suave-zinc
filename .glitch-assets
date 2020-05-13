@@ -1,0 +1,28 @@
+const Discord = require('discord.js');
+
+exports.run = (bot, message, args, ops) => {
+  if (message.author.id !== process.env.ZPEED) {
+  message.reply("Bu komutu kullanmak için Zpeed#7666 olmalısın")
+  } else {
+  message.delete();
+  bot.user.setStatus("");
+  bot.user.setGame(`AggrBot`);
+  message.channel.send({embed: {
+    color: 3447003,
+    description: `✅  Oyun Kapatıldı.`
+  }});
+}
+};
+
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: [],
+  permLevel: 0
+};
+
+exports.help = {
+  name: 'zpeed-oyun-kapat',
+  description: '',
+  usage: 'zpeed-oyun-kapat'
+};
